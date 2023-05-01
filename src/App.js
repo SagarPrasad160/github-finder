@@ -1,23 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { useState } from "react";
+
+import SearchInput from "./components/SearchInput";
+import UsersList from "./components/UsersList";
+import NavBar from "./components/NavBar";
+import Footer from "./components/Footer";
 
 function App() {
+  const [users, setUsers] = useState([]);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="flex flex-col justify-between h-screen max-h-fit box-border">
+      <NavBar />
+      <SearchInput setUsers={setUsers} />
+      <UsersList users={users} />
+      <Footer />
     </div>
   );
 }
