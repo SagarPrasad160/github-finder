@@ -1,7 +1,5 @@
 import React from "react";
-
 import { useState } from "react";
-
 import { fetchUsers } from "../api";
 
 function SearchInput({ setUsers }) {
@@ -19,19 +17,19 @@ function SearchInput({ setUsers }) {
   };
 
   return (
-    <div className="p-2">
-      <form onSubmit={handleSubmit}>
+    <div className="p-2 flex flex-col sm:flex-row items-center">
+      <form className="w-full sm:w-auto flex-grow" onSubmit={handleSubmit}>
         <input
           type="text"
           placeholder="Type here"
-          className="input input-bordered input-lg w-full max-w-xs"
+          className="input input-bordered input-lg w-full"
           value={searchTerm}
           onChange={handleChange}
         />
-        <button type="submit" className="p-2  rounded ml-3 btn btn-lg">
-          Search
-        </button>
       </form>
+      <button type="submit" className="p-2 rounded ml-0 sm:ml-3 btn btn-lg">
+        Search
+      </button>
     </div>
   );
 }

@@ -6,7 +6,10 @@ function UserItem({ user }) {
       <div className="w-24 rounded-full">
         <img src={`${user.avatar_url}`} alt={`Avatar of ${user.login}`} />
       </div>
-      <div className="ml-2 truncate">{user.login}</div>
+      <div className="ml-2 truncate">
+        {" "}
+        <a href={user.html_url}>{user.login}</a>
+      </div>
     </div>
   );
 }
